@@ -13,7 +13,7 @@ export default async function MoviePage() {
   const movies = moviesData.results;
 
   return (
-    <section className="flex flex-col bg-blacky flex-wrap gap-4 items-center justify-center py-5">
+    <section className="flex flex-col bg-blacky flex-wrap gap-4 items-center justify-center mb-5">
     <Hero />
     <h3 className="text-2xl font-bold text-white text-left mt-5">Trending Now</h3>
     <div className="flex flex-row flex-wrap gap-4 items-center justify-center py-5">
