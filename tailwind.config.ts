@@ -8,11 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'marimo':'#3CB371',
+        'greyBg':'#262626',
+        'blacky':'#1b1a1a',
+      },
       backgroundImage: {
+        'heropattern':"url('/roronoa-zoro.jpg')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      backgroundColor: {
+        'heroColor': "rgba(0,0,0,.2)",
+      }
     },
   },
   plugins: [],
