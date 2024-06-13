@@ -12,6 +12,10 @@ body {
   overflow: hidden;
 }
 
+.animation-card {
+animation: 0.25s ease 0s 1 normal none running sacleImg;
+}
+
 .bg-hero-overlay::before {
   content: "";
   background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
