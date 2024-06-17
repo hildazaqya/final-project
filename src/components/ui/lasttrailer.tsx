@@ -72,7 +72,7 @@ export default function LastTrailer() {
               <div className="relative flex flex-col items-center justify-center p-2 rounded-md hover:scale-105 transition-transform duration-300"
               >
                 <Link href={`https://www.youtube.com/watch?v=${item.key}`}>
-                  <div className="overflow-hidden w-[220px] !h-[124px]">
+                  <div className="block overflow-hidden w-[220px] !h-[124px]">
                     <Image
                       src={`${linkImages}${item.poster_path}`}
                       alt={item.name}
@@ -80,6 +80,11 @@ export default function LastTrailer() {
                       height={124}
                       className="object-cover rounded-md !h-[124px]"
                     />
+                    <div className="play absolute top-0 left-0 flex items-center justify-center w-[220px] h-buttonplay">
+                    <span>
+                    <Image width={48} height={48} src={`https://img.icons8.com/ios/96/circled-play--v1.png`} alt="circled-play--v1"/>
+                    </span>
+                  </div>
                   </div>
                 </Link>
                 <h2 className="text-white text-sm mt-2 text-left">{item.name}</h2>

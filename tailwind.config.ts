@@ -21,6 +21,9 @@ const config: Config = {
       },
       backgroundColor: {
         'heroColor': "rgba(0,0,0,.2)",
+      },
+      height: {
+        'buttonplay': "calc(300px/1.98)"
       }
     },
   },

@@ -8,6 +8,11 @@ const nextConfig = {
         port: '',
         pathname: '/t/p/**',  // This allows any path under /t/p
       },
+      {
+        protocol: 'https',
+        hostname: 'img.icons8.com',
+        port: '',
+      },
     ],
   },
 }
