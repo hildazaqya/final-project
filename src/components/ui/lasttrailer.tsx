@@ -53,9 +53,9 @@ export default function LastTrailer() {
     return <div className="text-white">Error: {error}</div>;
   }
 
-  if (trailers.length === 0) {
-    return <div className="text-white">Loading...</div>;
-  }
+  // if (trailers.length === 0) {
+  //   return <div className="text-white">Loading...</div>;
+  // }
 
   return (
     <div className="flex flex-col justify-center z-10 mt-5 ps-10 py-5 bg-marimo">
