@@ -111,15 +111,14 @@ export default function LastTrailer() {
         className="flex items-center justify-center"
         overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
       >
-        <div className="bg-white rounded-lg w-[80vw] h-[80vh] flex items-center justify-center border-none">
+        <div className="rounded-lg w-[80vw] h-[80vh] flex items-center justify-center border-none">
           <button onClick={closeModal} className="absolute top-2 right-2 text-black text-2xl">×</button>
           {currentVideoKey && (
             <iframe
               width="100%"
               height="100%"
               src={`https://www.youtube.com/embed/${currentVideoKey}`}
-              title="YouTube video player"
-              frameBorder="0"
+              title="Video Trailer"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
