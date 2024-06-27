@@ -3,12 +3,12 @@ import "./globals.css";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 
-import { Poppins } from '@next/font/google';
+import { Sora } from 'next/font/google';
 
-const poppins = Poppins({
+const sora = Sora({
   subsets: ['latin'],
   weight: ['400', '700'],
-  variable: '--font-poppins',
+  variable: '--sora-variable',
 });
 
 export const metadata: Metadata = {
@@ -18,20 +18,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
-      <link rel="icon" type="image/svg+xml" href="/logo.svg" />        
-      <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+        <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
       </head>
-      <body className={poppins.className}>
+      <body className={sora.className}>
         <Navbar />
         {children}
         <Footer />
-        </body>
+      </body>
     </html>
   );
 }
