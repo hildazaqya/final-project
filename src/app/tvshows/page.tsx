@@ -33,16 +33,16 @@ export default async function TvShows() {
             </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-4">
       {tvshows.map((tv: any) => (
-        <div className="relative overflow-hidden rounded-lg group bg-slate-300 p-5" key={tv.id}>
+        <div className="relative overflow-hidden rounded-lg group bg-gradient-to-t from-slate-800 to-white shadow-md p-5 cursor-pointer" key={tv.id}>
         <Image
             src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`}
             alt={tv.title}
             width={500}
             height={750}
-            className="w-full h-48 object-cover rounded-md"
+            className="w-full h-48 object-cover rounded-md shadow-md"
           />
         <div className="bg-background text-left gap-2 mt-3">
-          <h2 className="text-blacky font-bold text-white text-lg">{tv.original_name}</h2>
+          <h2 className="text-blacky font-bold text-lg">{tv.original_name}</h2>
           <p className="text-sm text-muted-foreground line-clamp-2">
             {tv.overview}
           </p>

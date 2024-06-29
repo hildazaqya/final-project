@@ -19,21 +19,38 @@ export default async function Movies() {
   const movies = data.results;
 
   return (
-    <section className="flex flex-col flex-wrap gap-4 bg-blacky items-center justify-center">
-      <h1 className="text-white font-bold text-center">Movies</h1>
-      <div className="grid grid-cols-5 gap-8">
-      {movies.map((movie: any) => (
-        <div className="w-52 border-2 border-gray-900" key={movie.id}>
-          <Image
-            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-            alt={movie.title}
-            width={500}
-            height={750}
-            className="h-40 object-cover"
-          />
-          <h2 className="text-center text-xl text-white">{movie.title}</h2>
+    <section className="flex flex-col flex-wrap gap-4 bg-blacky items-center justify-center mx-[50px]">
+      <div className="container h-80 flex items-center">
+        <div className="flex flex-col items-center justify-start text-left space-y-4 text-white">
+          <h1 className="text-xl font-bold tracking-tighter sm:text-2xl xl:text-3xl">
+            Discover the Best Movies
+          </h1>
+          <p className="text-muted-foreground md:text-base">
+            Dive into a handpicked collection of the latest and greatest movies.
+            Whether you're in the mood for thrilling action, heartfelt dramas,
+            or laugh-out-loud comedies, we've got something for every movie lover.
+          </p>
         </div>
-      ))}
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-4">
+        {movies.map((movie: any) => (
+          <div className="relative overflow-hidden rounded-lg group bg-gradient-to-t from-slate-800 to-white shadow-md p-5 cursor-pointer" key={movie.id}>
+            <Image
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.title}
+              width={500}
+              height={750}
+              className="w-full h-48 object-cover rounded-md shadow-md"
+            />
+            <div className="bg-background text-left gap-2 mt-3">
+              <h2 className="text-blacky font-bold text-lg">{movie.title}</h2>
+              <p className="text-sm text-muted-foreground line-clamp-2">
+                {movie.overview}
+              </p>
+              <button className="bg-marimo hover:bg-slate-700 text-white p-2 text-sm mt-3 rounded-md w-[120px]">More Info</button>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
