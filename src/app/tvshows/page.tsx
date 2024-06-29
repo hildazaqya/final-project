@@ -19,36 +19,34 @@ export default async function TvShows() {
   const tvshows = data.results;
 
   return (
-    <section className="flex flex-col flex-wrap gap-4 bg-blacky items-center justify-center">
-          <div className="container h-80 flex items-center px-4 md:px-6">
-              <div className="flex flex-col justify-center space-y-4 text-white">
-                <div className="space-y-2">
-                  <h1 className="text-2xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+    <section className="flex flex-col flex-wrap gap-4 bg-blacky items-center justify-center mx-[50px]">
+          <div className="container h-80 flex items-center">
+              <div className="flex flex-col items-center justify-start text-left space-y-4 text-white">
+                  <h1 className="text-xl font-bold tracking-tighter sm:text-2xl xl:text-3xl">
                     Discover the Best TV Shows
                   </h1>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                  <p className="text-muted-foreground md:text-base">
                     Explore a curated selection of the latest and greatest TV shows. From gripping dramas to hilarious
                     comedies, we've got something for everyone.
                   </p>
-                </div>
               </div>
             </div>
-      <div className="grid grid-cols-3 gap-8 mx-[50px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-4">
       {tvshows.map((tv: any) => (
-        <div className="relative overflow-hidden rounded-lg group" key={tv.id}>
+        <div className="relative overflow-hidden rounded-lg group bg-slate-300 p-5" key={tv.id}>
         <Image
             src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`}
             alt={tv.title}
             width={500}
             height={750}
-            className="h-40 object-cover"
+            className="w-full h-48 object-cover rounded-md"
           />
-        <div className="p-4 bg-background">
-          <h2 className="text-center text-xl text-white">{tv.original_name}</h2>
+        <div className="bg-background text-left gap-2 mt-3">
+          <h2 className="text-blacky font-bold text-white text-lg">{tv.original_name}</h2>
           <p className="text-sm text-muted-foreground line-clamp-2">
-            When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying
-            supernatural forces, and one very strange little girl.
+            {tv.overview}
           </p>
+          <button className="bg-marimo hover:bg-slate-700 text-white p-2 text-sm mt-3 rounded-md w-[120px]">More Info</button>
         </div>
       </div>          
       ))}
