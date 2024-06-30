@@ -34,7 +34,7 @@ export default async function Movies() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-4">
         {movies.map((movie: any) => (
-          <div className="relative overflow-hidden rounded-lg group bg-gradient-to-t from-slate-800 to-white shadow-md p-5 cursor-pointer" key={movie.id}>
+          <div className="relative overflow-hidden rounded-lg group bg-gradient-to-t from-slate-800 to-slate-400 shadow-md p-5 cursor-pointer" key={movie.id}>
             <Image
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
@@ -44,7 +44,7 @@ export default async function Movies() {
             />
             <div className="bg-background text-left gap-2 mt-3">
               <h2 className="text-blacky font-bold text-lg">{movie.title}</h2>
-              <p className="text-sm text-muted-foreground line-clamp-2">
+              <p className="text-sm text-muted-foreground line-clamp-2 text-slate-950">
                 {movie.overview}
               </p>
               <button className="bg-marimo hover:bg-slate-700 text-white p-2 text-sm mt-3 rounded-md w-[120px]">More Info</button>
