@@ -27,7 +27,7 @@ export default async function TvShows() {
           </h1>
           <p className="text-muted-foreground md:text-base">
             Explore a curated selection of the latest and greatest TV shows. From gripping dramas to hilarious
-            comedies, we've got something for everyone.
+            comedies, we&apos;ve got something for everyone.
           </p>
         </div>
       </div>

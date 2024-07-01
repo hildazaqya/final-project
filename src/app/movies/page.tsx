@@ -27,7 +27,7 @@ export default async function Movies() {
           </h1>
           <p className="text-muted-foreground md:text-base">
             Dive into a handpicked collection of the latest and greatest movies.
-            Whether you're in the mood for thrilling action, heartfelt dramas,
+            Whether you&apos;re in the mood for thrilling action, heartfelt dramas,
             or laugh-out-loud comedies, we've got something for every movie lover.
           </p>
         </div>
