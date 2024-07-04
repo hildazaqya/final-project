@@ -47,7 +47,7 @@ export default async function Movies() {
               <p className="text-sm text-muted-foreground line-clamp-2 text-slate-950">
                 {movie.overview}
               </p>
-              <button className="bg-marimo hover:bg-slate-700 text-white p-2 text-sm mt-3 rounded-md w-[120px]">More Info</button>
+              <button className="bg-marimo hover:bg-slate-900 text-white p-2 text-sm mt-3 rounded-md w-[120px]">More Info</button>
             </div>
           </div>
         ))}
