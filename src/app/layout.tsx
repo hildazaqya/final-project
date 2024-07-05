@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" type="image/svg+xml" href="/logo.svg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />

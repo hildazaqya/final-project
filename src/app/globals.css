@@ -18,6 +18,9 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
+.transition-navbar {
+  transition: 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
 .bg-hero-overlay::before {
   content: "";
   background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
