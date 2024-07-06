@@ -3,7 +3,7 @@ import React from "react";
 
 function Hero() {
   return (
-    <section className="flex items-center justify-center">
+    <section className="md:flex md:items-center md:justify-center">
       <div className="container h-[500px] flex bg-heroColor bg-no-repeat bg-cover bg-heropattern bg-hero-overlay items-center justify-between w-full">
         <div className="mb-7 flex flex-col gap-2 w-full ms-8 ">
           <h2 className="text-5xl font-bold tracking-wide">Explore, Watch, Enjoy</h2>

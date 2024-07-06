@@ -15,14 +15,14 @@ function Navbar() {
   return (
     <nav className="bg-blacky w-full">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-        <div className="navbar-left flex flex-col md:flex-row gap-3 items-start md:gap-8 md:items-center justify-between w-full md:w-fit">
+        <div className="navbar-left flex flex-col lg:flex-row gap-3 items-start lg:gap-8 lg:items-center justify-between w-full lg:w-fit">
           <div className='flex flex-row w-full justify-between'>
             <h3 className="text-white font-bold text-xl">
               <Link href="/" passHref>
                 <h1 className='text-xl text-marimo font-bold'>RORONOA.NET</h1>
               </Link>
             </h3>
-            <div className='md:hidden'>
+            <div className='lg:hidden'>
               <button onClick={toggleMenu} className='text-white focus:outline-none'>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
@@ -30,7 +30,7 @@ function Navbar() {
               </button>
             </div>
           </div>
-          <ul className={`flex-col md:flex-row md:flex md:items-center gap-4 pb-3 md:py-0 md:gap-0 md:space-x-8 text-sm ${isOpen ? 'flex' : 'hidden'}`}>
+          <ul className={`flex-col lg:flex-row lg:flex lg:items-center gap-4 pb-3 lg:py-0 lg:gap-0 lg:space-x-8 text-sm ${isOpen ? 'flex' : 'hidden'}`}>
               <li className={clsx('hover:text-marimo transition-navbar', { 'text-green-500': pathname === '/', 'text-white': pathname !== '/' })}>
               <Link href="/">
                 Home
@@ -53,7 +53,7 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <div className='input hidden md:block'>
+        <div className='input hidden lg:block'>
           <label className="relative flex items-center w-[250px] h-[30px] my-3">
             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
               <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">

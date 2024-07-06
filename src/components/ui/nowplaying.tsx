@@ -41,8 +41,25 @@ export default function TrendingNow() {
           Now Playing
         </h3>
       </div>
-      <div className="relative flex flex-row gap-5 z-10 items-center justify-center !w-[900px] mt-4">
-        <Swiper spaceBetween={50} slidesPerView={5} className="!relative !z-0 !w-[900px] !overflow-x-clip !overflow-y-visible">
+      <div className="relative flex flex-row gap-5 z-10 items-center justify-center w-[460px] sm:w-[540px] md:w-[600px] lg:!w-[900px] overflow-hidden mt-4">      
+        <Swiper 
+        spaceBetween={50} 
+         slidesPerView={3}
+         breakpoints={{
+             640: {
+                 slidesPerView: 3,
+                 spaceBetween: 20,
+             },
+             768: {
+                 slidesPerView: 4,
+                 spaceBetween: 30,
+             },
+             1024: {
+                 slidesPerView: 5,
+                 spaceBetween: 40,
+             },
+         }}
+         className="!relative !z-0 !max-w-[320px] sm:!max-w-[600px] md:!max-w-[800px] lg:!max-w-[900px] !overflow-x-clip !overflow-y-visible">
           {movies.map((item: any) => (
             <SwiperSlide key={item.id}>
               <div className="relative flex flex-col items-center justify-center p-2 rounded-md"

@@ -69,14 +69,29 @@ export default function LastTrailer() {
 
   return (
     <div className="flex flex-col justify-center z-10 mt-5 ps-10 py-5 bg-marimo">
-      <div className="mx-[50px]">
         <div className="title flex justify-start items-center w-full">
-          <h3 className="text-2xl font-bold text-white text-left">
+          <h3 className="text-2xl font-bold text-white text-left ms-[50px]">
             Latest Trailer
           </h3>
         </div>
-        <div className="relative flex flex-row gap-5 z-10 items-center justify-center !w-[1000px] mt-4">
-          <Swiper spaceBetween={50} slidesPerView={4}>
+      <div className="relative flex flex-row gap-5 z-10 items-center justify-center w-[500px] sm:w-[560px] md:w-[700px] lg:!w-[1000px] overflow-hidden mt-4">
+          <Swiper spaceBetween={50} 
+          slidesPerView={4}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+          }}
+         className="!relative !z-0 !max-w-[320px] sm:!max-w-[500px] md:!max-w-[600px] lg:!max-w-[900px] !overflow-x-clip !overflow-y-visible">
             {trailers.map((item: any) => (
               <SwiperSlide key={item.id}>
                 <div
@@ -103,7 +118,6 @@ export default function LastTrailer() {
             ))}
           </Swiper>
         </div>
-      </div>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
