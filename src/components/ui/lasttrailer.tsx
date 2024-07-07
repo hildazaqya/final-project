@@ -69,7 +69,7 @@ export default function LastTrailer() {
 
   return (
     <div className="flex flex-col justify-center z-10 mt-5 ps-10 py-5 bg-marimo">
-        <div className="title flex justify-start items-center w-full">
+        <div className="title flex justify-start w-full">
           <h3 className="text-2xl font-bold text-white text-left ms-[50px]">
             Latest Trailer
           </h3>
