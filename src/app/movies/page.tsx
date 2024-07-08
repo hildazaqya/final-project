@@ -21,7 +21,7 @@ export default async function Movies() {
   return (
     <section className="flex flex-col flex-wrap gap-4 bg-blacky items-center justify-center mx-[50px]">
       <div className="container h-80 flex items-center">
-        <div className="flex flex-col items-center justify-start text-left space-y-4 text-white">
+        <div className="flex flex-col items-center justify-start text-center md:text-left space-y-4 text-white">
           <h1 className="text-xl font-bold tracking-tighter sm:text-2xl xl:text-3xl">
             Discover the Best Movies
           </h1>

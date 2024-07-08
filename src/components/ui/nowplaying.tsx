@@ -41,7 +41,7 @@ export default function TrendingNow() {
           Now Playing
         </h3>
       </div>
-      <div className="relative flex flex-row gap-5 z-10 items-center justify-center w-[460px] sm:w-[540px] md:w-[600px] lg:!w-[900px] overflow-hidden mt-4">      
+      <div className="relative flex flex-row gap-5 z-10 items-center justify-center w-[460px] sm:w-[540px] md:w-[600px] lg:!w-[900px] overflow-hidden md:overflow-visible mt-4">      
         <Swiper 
         spaceBetween={50} 
          slidesPerView={3}
