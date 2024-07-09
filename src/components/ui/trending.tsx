@@ -42,7 +42,7 @@ export default function TrendingNow() {
           Trending Now
         </h3>
       </div>
-      <div className="relative flex flex-row gap-5 z-10 items-center justify-center w-[460px] sm:w-[540px] md:w-[600px] lg:!w-[900px] overflow-hidden md:overflow-visible mt-4">
+      <div className="relative flex flex-row gap-5 z-10 items-center justify-center w-[460px] sm:w-[540px] md:w-[600px] lg:!w-[900px] mt-4 !overflow-x-clip !overflow-y-visible">
       <Swiper 
         spaceBetween={50} 
          slidesPerView={3}
@@ -60,9 +60,9 @@ export default function TrendingNow() {
                  spaceBetween: 40,
              },
          }}
-         className="!relative !z-0 !max-w-[320px] sm:!max-w-[600px] md:!max-w-[800px] lg:!max-w-[900px] !overflow-x-clip !overflow-y-visible">
+         className="!relative !z-0 !max-w-[400px] sm:!max-w-[600px] md:!max-w-[800px] lg:!max-w-[900px] !overflow-x-clip !overflow-y-visible">
           {movies.map((item: any) => (
-            <SwiperSlide key={item.id}>
+            <SwiperSlide key={item.id} className="!w-[148px]">
               <div className="relative flex flex-col items-center justify-center p-2 rounded-md"
                 onMouseEnter={() => setHoveredMovieId(item.id)}
                 onMouseLeave={() => setHoveredMovieId(null)}
