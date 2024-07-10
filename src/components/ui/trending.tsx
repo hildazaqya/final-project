@@ -81,7 +81,7 @@ export default function TrendingNow() {
                 <h2 className="text-white text-sm mt-2 text-left">{item.title}</h2>
                 {hoveredMovieId === item.id && (
                 <Link href={`/movie/${item.id}`}>
-                  <div className="block absolute z-50 bottom-[25px] left-0 right-[40px] p-2 w-[250px] h-[auto] transform -translate-y-6 animation-card bg-black text-white rounded-md">                   
+                  <div className="block absolute z-50 bottom-[25px] left-0 right-[40px] p-2 w-[250px] h-[280px] transform -translate-y-6 animation-card bg-black text-white rounded-md">                   
                     <div className="h-[100px]">
                     <Image
                         src={`${linkImages}${item.backdrop_path}`}
@@ -95,7 +95,7 @@ export default function TrendingNow() {
                     <div className="flex flex-col gap-2 p-2">
                       <h4 className="text-base font-bold">{item.title}</h4>
                       <p className="text-xs">⭐ {item.vote_average.toFixed(1)}</p>
-                      <p className="text-xs text-justify">{truncateText(item.overview, 25)}</p>
+                      <p className="text-[10px] text-justify">{truncateText(item.overview, 18)}</p>
                       <p className="text-xs text-marimo text-right cursor-pointer">more info {' > '}</p>
                     </div>
                   </div>

@@ -21,7 +21,7 @@ function truncateText(text: string, wordLimit: number): string {
   return text;
 }
 
-export default function TrendingNow() {
+export default function NowPlaying() {
   const linkImages = "https://image.tmdb.org/t/p/w500";
   const [movies, setMovies] = useState([]);
   const [hoveredMovieId, setHoveredMovieId] = useState(null);
