@@ -61,7 +61,7 @@ export default function TrendingNow() {
          }}
          className="!relative !z-0 !max-w-[400px] sm:!max-w-[600px] md:!max-w-[800px] lg:!max-w-[900px] !overflow-x-clip !overflow-y-visible">
           {movies.map((item: any) => (
-            <SwiperSlide key={item.id}>
+            <SwiperSlide key={item.id} className="!w-[148px] !mr-[20px] md:!mr-[40px]">
               <div className="relative flex flex-col items-center justify-center p-2 rounded-md"
                 onMouseEnter={() => setHoveredMovieId(item.id)}
                 onMouseLeave={() => setHoveredMovieId(null)}>

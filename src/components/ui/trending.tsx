@@ -36,7 +36,7 @@ export default function TrendingNow() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center z-10 mt-5 mx-[50px] md:ps-10">
+    <div className="flex flex-col justify-center z-10 mt-5 mx-[50px] sm:ps-10">
       <div className="title flex justify-start items-center w-full z-10">
         <h3 className="text-2xl font-bold text-white text-left z-10">
           Trending Now
@@ -62,7 +62,7 @@ export default function TrendingNow() {
          }}
          className="!relative !z-0 !max-w-[400px] sm:!max-w-[600px] md:!max-w-[800px] lg:!max-w-[900px] !overflow-x-clip !overflow-y-visible">
           {movies.map((item: any) => (
-            <SwiperSlide key={item.id} className="!w-[148px]">
+            <SwiperSlide key={item.id} className="!w-[148px] !mr-[20px] md:!mr-[40px]">
               <div className="relative flex flex-col items-center justify-center p-2 rounded-md"
                 onMouseEnter={() => setHoveredMovieId(item.id)}
                 onMouseLeave={() => setHoveredMovieId(null)}
