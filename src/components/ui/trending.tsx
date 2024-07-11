@@ -38,7 +38,7 @@ export default function TrendingNow() {
   return (
     <div className="flex flex-col justify-center z-10 mt-5 mx-[50px] sm:ps-10">
       <div className="title flex justify-start items-center w-full z-10">
-        <h3 className="text-2xl font-bold text-white text-left z-10">
+        <h3 className="text-2xl font-bold text-milky text-left z-10">
           Trending Now
         </h3>
       </div>
@@ -78,10 +78,10 @@ export default function TrendingNow() {
                     />
                   </div>
                 </Link>
-                <h2 className="text-white text-sm mt-2 text-left">{item.title}</h2>
+                <h2 className="text-milky text-sm mt-2 text-left">{item.title}</h2>
                 {hoveredMovieId === item.id && (
                 <Link href={`/movie/${item.id}`}>
-                  <div className="block absolute z-50 bottom-[25px] left-0 right-[40px] p-2 w-[250px] h-[280px] transform -translate-y-6 animation-card bg-black text-white rounded-md">                   
+                  <div className="block absolute z-50 bottom-[25px] left-0 right-[40px] p-2 w-[250px] h-[auto] transform -translate-y-6 animation-card bg-black text-milky rounded-md">                   
                     <div className="h-[100px]">
                     <Image
                         src={`${linkImages}${item.backdrop_path}`}

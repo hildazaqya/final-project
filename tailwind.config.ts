@@ -12,6 +12,7 @@ const config: Config = {
         'marimo':'#3CB371',
         'greyBg':'#262626',
         'blacky':'#1b1a1a',
+        'milky':'#F5F5FA',
       },
       backgroundImage: {
         'heropattern':"url('/roronoa-zoro.jpg')",
