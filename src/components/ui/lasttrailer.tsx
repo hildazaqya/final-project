@@ -74,31 +74,31 @@ export default function LastTrailer() {
             Latest Trailer
           </h3>
         </div>
-      <div className="relative flex flex-row gap-5 z-10 items-center justify-center w-[500px] sm:w-[560px] md:w-[700px] lg:!w-[1000px] overflow-hidden mt-4">
-          <Swiper spaceBetween={50} 
-          slidesPerView={4}
+      <div className="relative flex flex-row gap-5 z-10 items-center justify-center w-[320px] sm:w-[480px] md:w-[700px] lg:!w-[1000px] overflow-hidden mt-4">
+          <Swiper spaceBetween={20} 
+          slidesPerView={2}
           breakpoints={{
             640: {
               slidesPerView: 2,
-              spaceBetween: 20,
+              spaceBetween: 30,
             },
             768: {
               slidesPerView: 3,
-              spaceBetween: 30,
+              spaceBetween: 20,
             },
             1024: {
               slidesPerView: 4,
-              spaceBetween: 40,
+              spaceBetween: 10,
             },
           }}
          className="!relative !z-0 !max-w-[320px] sm:!max-w-[500px] md:!max-w-[600px] lg:!max-w-[900px] !overflow-x-clip !overflow-y-visible">
             {trailers.map((item: any) => (
-              <SwiperSlide key={item.id}>
+              <SwiperSlide key={item.id} className="!w-[248px]">
                 <div
                   className="relative flex flex-col items-center justify-center p-2 rounded-md hover:scale-105 transition-transform duration-300"
                   onClick={() => openModal(item.key)}
                 >
-                  <div className="block overflow-hidden w-[220px] !h-[124px]">
+                  <div className="block overflow-hidden !w-[220px] !h-[124px]">
                     <Image
                       src={`${linkImages}${item.poster_path}`}
                       alt={item.name}

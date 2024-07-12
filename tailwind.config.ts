@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         'marimo':'#3CB371',
         'greyBg':'#262626',
-        'blacky':'#1b1a1a',
+        'blacky':'#1f1717',
         'milky':'#F5F5FA',
       },
       backgroundImage: {

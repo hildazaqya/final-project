@@ -57,7 +57,7 @@ export default function TrendingNow() {
              },
              1024: {
                  slidesPerView: 5,
-                 spaceBetween: 40,
+                 spaceBetween: 30,
              },
          }}
          className="!relative !z-0 !max-w-[400px] sm:!max-w-[600px] md:!max-w-[800px] lg:!max-w-[900px] !overflow-x-clip !overflow-y-visible">
@@ -68,17 +68,17 @@ export default function TrendingNow() {
                 onMouseLeave={() => setHoveredMovieId(null)}
               >
                 <Link href={`/movie/${item.id}`}>
-                  <div className="overflow-hidden w-[170px] h-[220px]">
+                  <div className="w-[170px] h-[220px]">
                     <Image
                       src={`${linkImages}${item.poster_path}`}
                       alt={item.original_title}
                       width={170}
                       height={220}
-                      className="object-cover rounded-md"
+                      className="object-cover rounded-[14px]"
                     />
                   </div>
                 </Link>
-                <h2 className="text-milky text-sm mt-2 text-left">{item.title}</h2>
+                <h2 className="text-milky text-sm mt-2 text-center pt-10">{item.title}</h2>
                 {hoveredMovieId === item.id && (
                 <Link href={`/movie/${item.id}`}>
                   <div className="block absolute z-50 bottom-[25px] left-0 right-[40px] p-2 w-[250px] h-[auto] transform -translate-y-6 animation-card bg-black text-milky rounded-md">                   
