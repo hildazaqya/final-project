@@ -33,7 +33,7 @@ export default async function TvShows() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-4">
         {tvshows.map((tv: any) => (
-          <div className="relative overflow-hidden rounded-[14px] group bg-gradient-to-t from-slate-600 to-[#292727] shadow-md p-5 cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:shadow-violet-500/50 transition-all" key={tv.id}>
+          <div className="relative overflow-hidden rounded-[14px] group bg-gradient-to-t from-slate-600 to-[#292727] shadow-md p-5 cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:shadow-violet-400/50 transition-all" key={tv.id}>
             <Image
               src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`}
               alt={tv.title}
