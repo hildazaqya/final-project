@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,6 +8,14 @@ function Hero() {
   const [searchResults, setSearchResults] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
 
+  const fetchMovies = useCallback(async () => {
+    const API_KEY = "4f23342c64119b888d4db574dbbab573";
+    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${keyword}&language=en-US&page=1`);
+    const data = await response.json();
+    setSearchResults(data.results);
+    setShowDropdown(true);
+  }, [keyword]);
+
   useEffect(() => {
     if (keyword.length > 0) {
       fetchMovies();
@@ -15,15 +23,7 @@ function Hero() {
       setSearchResults([]);
       setShowDropdown(false);
     }
-  }, [keyword]);
-
-  const fetchMovies = async () => {
-    const API_KEY = "4f23342c64119b888d4db574dbbab573";
-    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${keyword}&language=en-US&page=1`);
-    const data = await response.json();
-    setSearchResults(data.results);
-    setShowDropdown(true);
-  };
+  }, [keyword, fetchMovies]);
 
   const handleMovieClick = () => {
     setShowDropdown(false);
@@ -51,9 +51,8 @@ function Hero() {
             <div className="search-popup absolute bg-milky border rounded-lg mt-2 w-full max-w-[500px] max-h-[300px] overflow-y-auto shadow-lg z-50 bottom-[-120px]" 
             >
               {searchResults.map((movie:any) => (
-                <Link href={`/movie/${movie.id}`}>
+                <Link href={`/movie/${movie.id}`} key={movie.id}>
                   <div 
-                  key={movie.id} 
                   className="p-2 cursor-pointer bg-milky hover:bg-gray-200 flex flex-row items-center"
                   onClick={handleMovieClick}
                 >
