@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const API_KEY = "4f23342c64119b888d4db574dbbab573";
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 async function getNowPlayingMovies() {
   const response = await fetch(

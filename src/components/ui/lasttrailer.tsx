@@ -8,8 +8,9 @@ import 'swiper/css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-modal';
+import {MOVIE_POSTER_SIZE, BASE_TMDB_IMAGE_URL } from '@/configs';
 
-const API_KEY = '4f23342c64119b888d4db574dbbab573';
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 async function getVideoData() {
   const response = await fetch(`https://api.themoviedb.org/3/movie/297762/videos?api_key=${API_KEY}&language=en-US`);
@@ -24,7 +25,7 @@ async function getMovieDetails(movieId: number) {
 }
 
 export default function LastTrailer() {
-  const linkImages = "https://image.tmdb.org/t/p/w500";
+  const linkImages = `${BASE_TMDB_IMAGE_URL}/${MOVIE_POSTER_SIZE}`;
   const [trailers, setTrailers] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);

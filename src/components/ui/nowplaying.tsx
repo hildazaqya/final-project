@@ -5,10 +5,13 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import {MOVIE_POSTER_SIZE, BASE_TMDB_IMAGE_URL } from '@/configs';
 
 async function getData() {
+  // Client Side Component
+  const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
   const apiUrl = await fetch(
-    "https://api.themoviedb.org/3/movie/now_playing?api_key=4f23342c64119b888d4db574dbbab573&language=en-US&page=1"
+    `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
   );
   return apiUrl.json();
 }
@@ -22,7 +25,7 @@ function truncateText(text: string, wordLimit: number): string {
 }
 
 export default function NowPlaying() {
-  const linkImages = "https://image.tmdb.org/t/p/w500";
+  const linkImages = `${BASE_TMDB_IMAGE_URL}/${MOVIE_POSTER_SIZE}`;
   const [movies, setMovies] = useState([]);
   const [hoveredMovieId, setHoveredMovieId] = useState(null);
 

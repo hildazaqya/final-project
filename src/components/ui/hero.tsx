@@ -9,7 +9,7 @@ function Hero() {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const fetchMovies = useCallback(async () => {
-    const API_KEY = "4f23342c64119b888d4db574dbbab573";
+    const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${keyword}&language=en-US&page=1`);
     const data = await response.json();
     setSearchResults(data.results);
@@ -35,7 +35,7 @@ function Hero() {
         <div className="mb-7 flex flex-col gap-2 w-full ms-8 ">
           <h2 className="text-5xl font-bold tracking-wide">Explore, Watch, Enjoy</h2>
           <p className="text-xl tracking-wide">Enjoy your Movies and TV Shows</p>
-          <div className="bg-milky hidden relative z-40 items-center gap-2 mt-2 text-sm border-slate-300 rounded-full overflow-hidden max-w-[580px] max-h-[48px] mr-[50px]">
+          <div className="bg-milky flex relative z-40 items-center gap-2 mt-2 text-sm border-slate-300 rounded-full overflow-hidden max-w-[580px] max-h-[48px] mr-[50px]">
             <input 
               className="w-full bg-transparent placeholder:font-italic py-2 pl-3 pr-4 focus:outline-none" 
               placeholder="Enter your keyword to search" 
