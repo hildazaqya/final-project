@@ -76,16 +76,16 @@ export default function LastTrailer() {
           </h3>
         </div>
       <div className="relative flex flex-row gap-5 z-10 items-center justify-center w-[320px] sm:w-[480px] md:w-[700px] lg:!w-[1000px] overflow-hidden mt-4">
-          <Swiper spaceBetween={20} 
-          slidesPerView={2}
+          <Swiper spaceBetween={10} 
+          slidesPerView={3}
           breakpoints={{
             640: {
-              slidesPerView: 2,
-              spaceBetween: 30,
+              slidesPerView: 3,
+              spaceBetween: 10,
             },
             768: {
               slidesPerView: 3,
-              spaceBetween: 20,
+              spaceBetween: 10,
             },
             1024: {
               slidesPerView: 4,
@@ -107,7 +107,7 @@ export default function LastTrailer() {
                       height={124}
                       className="object-cover rounded-md !h-[124px]"
                     />
-                    <div className="play absolute top-0 left-0 flex items-center justify-center w-[220px] h-buttonplay">
+                    <div className="play absolute top-0 left-0 flex items-center justify-center w-[248px] h-buttonplay">
                       <span>
                         <FontAwesomeIcon icon={faPlay} size="2xl" style={{ color: "#ffffff" }} />
                       </span>

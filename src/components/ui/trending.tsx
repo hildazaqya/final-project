@@ -38,7 +38,7 @@ export default function TrendingNow() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center z-10 mt-5 mx-[50px] sm:ps-10">
+    <div className="flex flex-col justify-center z-10 mt-5 mx-[50px] md:ps-10">
       <div className="title flex justify-start items-center w-full z-10">
         <h3 className="text-2xl font-bold text-milky text-left z-10">
           Trending Now
