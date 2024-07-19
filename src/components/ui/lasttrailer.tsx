@@ -65,7 +65,7 @@ export default function LastTrailer() {
   };
 
   if (error) {
-    return <div className="text-white">Error: {error}</div>;
+    return <div className="text-milky">Error: {error}</div>;
   }
 
   return (
