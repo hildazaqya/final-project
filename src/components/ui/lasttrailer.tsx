@@ -113,7 +113,7 @@ export default function LastTrailer() {
                       </span>
                     </div>
                   </div>
-                  <h2 className="text-white text-sm mt-2 text-left">{item.name}</h2>
+                  <h2 className="text-milky text-sm mt-2 text-left">{item.name}</h2>
                 </div>
               </SwiperSlide>
             ))}
