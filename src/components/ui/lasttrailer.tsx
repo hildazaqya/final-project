@@ -71,11 +71,11 @@ export default function LastTrailer() {
   return (
     <div className="container mx-auto flex flex-col justify-center z-10 mt-5 ps-10 py-5 bg-marimo">
         <div className="title flex justify-start w-full">
-          <h3 className="text-2xl font-bold text-white text-left md:ms-[50px]">
+          <h3 className="text-2xl font-bold text-white text-left">
             Latest Trailer
           </h3>
         </div>
-      <div className="relative flex flex-row gap-5 z-10 items-center justify-center w-[320px] sm:w-[480px] md:w-[700px] lg:!w-[1000px] overflow-hidden mt-4">
+      <div className="relative flex flex-row gap-5 z-10 items-center justify-center w-[460px] sm:w-[540px] md:w-[600px] lg:!w-[900px] overflow-hidden mt-4">
           <Swiper spaceBetween={10} 
           slidesPerView={3}
           breakpoints={{

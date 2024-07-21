@@ -92,6 +92,7 @@ export default function TrendingNow() {
                         width={280}
                         height={150}
                         className="object-contain"
+                        loading="lazy"
                       />
                     </div>
                     <div className="flex flex-col gap-2 p-2">
