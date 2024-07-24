@@ -35,7 +35,7 @@ function Hero() {
         <div className="mb-7 flex flex-col gap-2 w-full ms-8 ">
           <h2 className="text-5xl font-bold tracking-wide">Explore, Watch, Enjoy</h2>
           <p className="text-xl tracking-wide">Enjoy your Movies and TV Shows</p>
-          <div className="bg-milky flex relative z-40 items-center gap-2 mt-2 text-sm border-slate-300 rounded-full overflow-hidden max-w-[580px] max-h-[48px] mr-[50px]">
+          <div className="bg-milky flex lg:hidden relative z-40 items-center gap-2 mt-2 text-sm border-slate-300 rounded-full overflow-hidden max-w-[580px] max-h-[48px] mr-[50px]">
             <input 
               className="w-full bg-transparent placeholder:font-italic py-2 pl-3 pr-4 focus:outline-none" 
               placeholder="Enter your keyword to search" 
