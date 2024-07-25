@@ -5,7 +5,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import {MOVIE_POSTER_SIZE, BASE_TMDB_IMAGE_URL } from '@/configs';
+import { MOVIE_POSTER_SIZE, BASE_TMDB_IMAGE_URL } from '@/configs';
+import { Spinner } from '@nextui-org/react';
 
 async function getData() {
   // Client Side Component
@@ -28,11 +29,14 @@ export default function NowPlaying() {
   const linkImages = `${BASE_TMDB_IMAGE_URL}/${MOVIE_POSTER_SIZE}`;
   const [movies, setMovies] = useState([]);
   const [hoveredMovieId, setHoveredMovieId] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
+      setIsLoading(true);
       const moviesData = await getData();
       setMovies(moviesData.results);
+      setIsLoading(false); 
     }
     fetchData();
   }, []);
@@ -44,25 +48,30 @@ export default function NowPlaying() {
           Now Playing
         </h3>
       </div>
-      <div className="relative flex flex-row gap-5 z-10 items-center justify-center w-[320px] sm:w-[540px] md:w-[600px] lg:!w-[900px] mt-4 !overflow-x-clip !overflow-y-visible">      
-        <Swiper 
-        spaceBetween={50} 
-         slidesPerView={3}
-         breakpoints={{
-             640: {
-                 slidesPerView: 3,
-                 spaceBetween: 20,
-             },
-             768: {
-                 slidesPerView: 4,
-                 spaceBetween: 30,
-             },
-             1024: {
-                 slidesPerView: 5,
-                 spaceBetween: 30,
-             },
-         }}
-         className="!relative !z-0 !max-w-[320px] sm:!max-w-[600px] md:!max-w-[800px] lg:!max-w-[900px] !overflow-x-clip !overflow-y-visible">
+      <div className="relative flex flex-row gap-5 z-10 items-center justify-center w-[320px] sm:w-[540px] md:w-[600px] lg:!w-[900px] mt-4 !overflow-x-clip !overflow-y-visible">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={3}
+          breakpoints={{
+            640: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 30,
+            },
+          }}
+          className="!relative !z-0 !max-w-[320px] sm:!max-w-[600px] md:!max-w-[800px] lg:!max-w-[900px] !overflow-x-clip !overflow-y-visible">
+          {isLoading && (
+            <div className="flex justify-center items-center my-16">
+              <Spinner size="lg" color="danger" />
+            </div>
+          )}
           {movies.map((item: any) => (
             <SwiperSlide key={item.id} className="!w-[148px] !mr-[20px] md:!mr-[40px]">
               <div className="relative flex flex-col items-center justify-center p-2 rounded-md"
@@ -81,25 +90,25 @@ export default function NowPlaying() {
                 </Link>
                 <h2 className="text-milky text-sm mt-2 text-center pt-10">{item.title}</h2>
                 {hoveredMovieId === item.id && (
-                <Link href={`/movie/${item.id}`}>
-                  <div className="block absolute z-50 bottom-[25px] left-0 right-[40px] p-2 w-[250px] h-[auto] transform -translate-y-6 animation-card bg-black text-white rounded-md">
-                    <div className="h-[100px]">
-                      <Image
-                        src={`${linkImages}${item.backdrop_path}`}
-                        alt={item.original_title}
-                        objectFit="cover"
-                        width={280}
-                        height={150}
-                        className="object-contain"
-                      />
+                  <Link href={`/movie/${item.id}`}>
+                    <div className="block absolute z-50 bottom-[25px] left-0 right-[40px] p-2 w-[250px] h-[auto] transform -translate-y-6 animation-card bg-black text-white rounded-md">
+                      <div className="h-[100px]">
+                        <Image
+                          src={`${linkImages}${item.backdrop_path}`}
+                          alt={item.original_title}
+                          objectFit="cover"
+                          width={280}
+                          height={150}
+                          className="object-contain"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-2 p-2">
+                        <h4 className="text-base font-bold">{item.title}</h4>
+                        <p className="text-xs">⭐ {item.vote_average.toFixed(1)}</p>
+                        <p className="text-xs text-justify">{truncateText(item.overview, 25)}</p>
+                        <p className="text-xs text-marimo text-right cursor-pointer">more info {' > '} </p>
+                      </div>
                     </div>
-                    <div className="flex flex-col gap-2 p-2">
-                      <h4 className="text-base font-bold">{item.title}</h4>
-                      <p className="text-xs">⭐ {item.vote_average.toFixed(1)}</p>
-                      <p className="text-xs text-justify">{truncateText(item.overview, 25)}</p>
-                      <p className="text-xs text-marimo text-right cursor-pointer">more info {' > '} </p>
-                    </div>
-                  </div>
                   </Link>
                 )}
               </div>
