@@ -1,74 +1,26 @@
-'use client'
-import React, { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
-import Link from "next/link";
+'use client';
+import React from 'react';
+import { useBackgroundImage } from '@/hooks/useBackgroundImage';
 
 function Hero() {
-  const [keyword, setKeyword] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  const fetchMovies = useCallback(async () => {
-    const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${keyword}&language=en-US&page=1`);
-    const data = await response.json();
-    setSearchResults(data.results);
-    setShowDropdown(true);
-  }, [keyword]);
-
-  useEffect(() => {
-    if (keyword.length > 0) {
-      fetchMovies();
-    } else {
-      setSearchResults([]);
-      setShowDropdown(false);
-    }
-  }, [keyword, fetchMovies]);
-
-  const handleMovieClick = () => {
-    setShowDropdown(false);
-  };
+  const backgroundImage = useBackgroundImage();
 
   return (
-    <section className="md:flex md:items-center md:justify-center">
-      <div className="container h-[500px] flex bg-heroColor bg-no-repeat bg-cover bg-heropattern bg-hero-overlay items-center justify-between w-full">
-        <div className="mb-7 flex flex-col gap-2 w-full ms-8 ">
-          <h2 className="text-5xl font-bold tracking-wide">Explore, Watch, Enjoy</h2>
-          <p className="text-xl tracking-wide">Enjoy your Movies and TV Shows</p>
-          <div className="bg-milky flex lg:hidden relative z-40 items-center gap-2 mt-2 text-sm border-slate-300 rounded-full overflow-hidden max-w-[580px] max-h-[48px] mr-[50px]">
-            <input 
-              className="w-full bg-transparent placeholder:font-italic py-2 pl-3 pr-4 focus:outline-none" 
-              placeholder="Enter your keyword to search" 
-              type="text" 
-              value={keyword}
-              onChange={(e) => setKeyword(e.target.value)}
-            />
-            <button className="flex items-center p-3 bg-marimo font-bold" onClick={fetchMovies}>
-              Search
-            </button>
-          </div>
-          {showDropdown && searchResults.length > 0 && (
-            <div className="search-popup absolute bg-milky border rounded-lg mt-2 w-full max-w-[500px] max-h-[300px] overflow-y-auto shadow-lg z-50 bottom-[-120px]" 
-            >
-              {searchResults.map((movie:any) => (
-                <Link href={`/movie/${movie.id}`} key={movie.id}>
-                  <div 
-                  className="p-2 cursor-pointer bg-milky hover:bg-gray-200 flex flex-row items-center"
-                  onClick={handleMovieClick}
-                >
-                  <Image
-                    src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-                    alt={movie.title}
-                    width={50}
-                    height={75}
-                    className="rounded"
-                  />
-                  <p className="ml-2">{movie.title}</p>
-                </div>
-                </Link>
-              ))}
-            </div>
-          )}
+    <section
+      className="hero-background w-full"
+      style={{
+        backgroundImage: `
+        linear-gradient(to bottom, rgba(0, 0, 139, 0) 0%, rgba(13, 27, 42, 0.3) 30%, rgba(13, 27, 42, 0.9) 90%), 
+        linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), 
+        url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="h-[500px] flex items-center justify-center w-full">
+        <div className="flex flex-col gap-2 w-full text-center">
+          <h2 className="text-4xl font-bold tracking-wide text-accent">Explore, Watch, Enjoy</h2>
+          <p className="text-xl tracking-wide text-accent">Enjoy your Movies and TV Shows</p>         
         </div>
       </div>
     </section>
