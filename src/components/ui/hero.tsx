@@ -31,10 +31,10 @@ function Hero() {
 
   return (
     <section className="md:flex md:items-center md:justify-center">
-      <div className="container h-[500px] flex bg-heroColor bg-no-repeat bg-cover bg-heropattern bg-hero-overlay items-center justify-between w-full">
-        <div className="mb-7 flex flex-col gap-2 w-full ms-8 ">
-          <h2 className="text-5xl font-bold tracking-wide">Explore, Watch, Enjoy</h2>
-          <p className="text-xl tracking-wide">Enjoy your Movies and TV Shows</p>
+      <div className="container h-[500px] flex bg-cover items-center justify-center w-full">
+        <div className="mb-7 flex flex-col gap-2 w-full ms-8 text-center">
+          <h2 className="text-4xl font-bold tracking-wide text-accent">Explore, Watch, Enjoy</h2>
+          <p className="text-xl tracking-wide text-accent">Enjoy your Movies and TV Shows</p>
           <div className="bg-milky flex lg:hidden relative z-40 items-center gap-2 mt-2 text-sm border-slate-300 rounded-full overflow-hidden max-w-[580px] max-h-[48px] mr-[50px]">
             <input 
               className="w-full bg-transparent placeholder:font-italic py-2 pl-3 pr-4 focus:outline-none" 
