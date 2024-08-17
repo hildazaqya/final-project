@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
-
-import { Sora } from 'next/font/google';
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import { Sora } from "next/font/google";
 
 const sora = Sora({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--sora-variable',
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--sora-variable",
 });
 
 export const metadata: Metadata = {
